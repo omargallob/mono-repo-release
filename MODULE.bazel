@@ -5,7 +5,7 @@ module(
 
 # Declare Bazel dependencies
 bazel_dep(name = "rules_go", version = "0.41.0")
-bazel_dep(name = "bazel_gazelle", version = "0.32.0", repo_name = "gazelle")
+bazel_dep(name = "gazelle", version = "0.32.0", repo_name = "gazelle")
 
 # Go toolchain
 go = use_extension("@rules_go//go:extensions.bzl", "go")
