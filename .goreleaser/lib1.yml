@@ -1,0 +1,17 @@
+project_name: lib1
+env:
+  - PKG_PATH=packages/lib1
+
+builds:
+  - <<: *base_build
+    id: lib1
+    dir: packages/lib1
+    binary: lib1
+    main: .
+    tags:
+      - "{{ .Version }}"
+
+release:
+  header: |
+    # Changelog
+    {{ .Changelog }}
