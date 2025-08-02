@@ -1,0 +1,7 @@
+load("@gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/your-org/your-repo
+gazelle(
+    name = "gazelle",
+    prefix = "github.com/omargallob/mono-repo-release",
+)
