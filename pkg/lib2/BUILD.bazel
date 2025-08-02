@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "lib2",
+    srcs = ["lib2.go"],
+    importpath = "github.com/your-org/your-repo/pkg/lib2",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "lib2_test",
+    srcs = ["lib2_test.go"],
+    embed = [":lib2"],
+    deps = ["@com_github_stretchr_testify//assert:go_default_library"],
+)
