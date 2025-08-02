@@ -9,7 +9,7 @@ http_archive(
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 go_rules_dependencies()
-go_register_toolchains(version = "1.21.0")
+go_register_toolchains(version = "1.24.5")
 
 # Gazelle
 http_archive(
