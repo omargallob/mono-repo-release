@@ -6,3 +6,10 @@ go_library(
     importpath = "github.com/your-org/your-repo/pkg/lib1",
     visibility = ["//visibility:public"],
 )
+
+go_test(
+    name = "lib1_test",
+    srcs = ["lib1_test.go"],
+    embed = [":lib1"],
+    deps = ["@com_github_stretchr_testify//assert:go_default_library"],
+)

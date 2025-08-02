@@ -1,5 +1,5 @@
 module(
-    name = "mono-repo-releaseb",
+    name = "mono-repo-release",
     version = "0.1.0",
 )
 
