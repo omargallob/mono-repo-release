@@ -11,14 +11,14 @@ bazel_dep(name = "gazelle", version = "0.32.0")
 go = use_extension("@rules_go//go:extensions.bzl", "go")
 go.download_sdk(
     name = "go_sdk",
-    version = "1.24.5",
+    version = "1.24.",
 )
 use_repo(go, "go_sdk")
 
-# Initialize Gazelle to manage Go dependencies
+# Gazelle setup
 gazelle = use_extension("@gazelle//:extensions.bzl", "gazelle")
 gazelle.go_repository(
-    name = "my_repo_go_deps",
-    go_mod = "//:go.mod",  # Points to your root go.mod
+    name = "go_deps",
+    go_mod = "//:go.mod",
 )
-use_repo(gazelle, "my_repo_go_deps")
+use_repo(gazelle, "go_deps")
