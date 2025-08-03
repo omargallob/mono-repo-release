@@ -3,44 +3,30 @@ package main
 import (
 	"bytes"
 	"os"
-	"strings"
-	"testing"
 
 	"github.com/omargallob/mono-repo-release/pkg/lib1"
 	"github.com/omargallob/mono-repo-release/pkg/lib2"
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 )
 
-// add a test for the runapp function
-func TestRunApp(t *testing.T) {
-	// Capture stdout
-	var buf bytes.Buffer
-	old := os.Stdout
-	r, w, _ := os.Pipe()
-	os.Stdout = w
+var _ = Describe("main", func() {
+	It("prints greet and farewell messages to stdout", func() {
+		r, w, _ := os.Pipe()
+		old := os.Stdout
+		os.Stdout = w
+		main()
+		w.Close()
+		os.Stdout = old
+		var buf bytes.Buffer
+		buf.ReadFrom(r)
+		output := buf.String()
+		Expect(output).To(ContainSubstring(lib1.Greet()))
+		Expect(output).To(ContainSubstring(lib2.Farewell()))
+	})
 
-	main()
-
-	w.Close()
-	os.Stdout = old
-	buf.ReadFrom(r)
-	output := buf.String()
-
-	if !strings.Contains(output, lib1.Greet()) {
-		t.Errorf("Expected output to contain greet message: %q", lib1.Greet())
-	}
-	if !strings.Contains(output, lib2.Farewell()) {
-		t.Errorf("Expected output to contain farewell message: %q", lib2.Farewell())
-	}
-}
-
-func TestMainOutput(t *testing.T) {
-	greet := lib1.Greet()
-	farewell := lib2.Farewell()
-
-	if greet == "" {
-		t.Errorf("Expected non-empty greet message")
-	}
-	if farewell == "" {
-		t.Errorf("Expected non-empty farewell message")
-	}
-}
+	It("returns non-empty greet and farewell messages", func() {
+		Expect(lib1.Greet()).NotTo(BeEmpty())
+		Expect(lib2.Farewell()).NotTo(BeEmpty())
+	})
+})

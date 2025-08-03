@@ -1,26 +1,12 @@
 package lib1
 
 import (
-	"testing"
-
-	"github.com/stretchr/testify/assert"
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 )
 
-func TestGreet(t *testing.T) {
-	tests := []struct {
-		name string
-		want string
-	}{
-		{
-			name: "basic greeting",
-			want: "Hello from lib1",
-		},
-	}
-
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got := Greet()
-			assert.Equal(t, tt.want, got, "Greet() = %v, want %v", got, tt.want)
-		})
-	}
-}
+var _ = Describe("Greet", func() {
+	It("returns the correct greeting message", func() {
+		Expect(Greet()).To(Equal("Hello from lib1"))
+	})
+})

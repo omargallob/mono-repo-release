@@ -9,7 +9,14 @@ go_library(
 
 go_test(
     name = "lib1_test",
-    srcs = ["lib1_test.go"],
+    srcs = [
+        "lib1_suite_test.go",
+        "lib1_test.go",
+    ],
     embed = [":lib1"],
-    deps = ["@com_github_stretchr_testify//assert"],
+    deps = [
+        "//test",
+        "@com_github_onsi_ginkgo_v2//:ginkgo",
+        "@com_github_onsi_gomega//:gomega",
+    ],
 )
