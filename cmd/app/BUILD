@@ -31,3 +31,12 @@ go_test(
         "//pkg/lib2",
     ],
 )
+
+sh_test(
+    name = "golangci-lint_test",
+    srcs = ["lint.sh"],
+    data = [
+        "//tools/golangci-lint:golangci-lint",
+        "//:go_sources",  # All Go files
+    ],
+)
