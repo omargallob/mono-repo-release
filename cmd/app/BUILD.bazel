@@ -3,6 +3,17 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "app_lib",
     srcs = ["main.go"],
-    importpath = "github.com/your-org/your-repo/cmd/app",
+    importpath = "github.com/omargallob/mono-repo-release/cmd/app",
     visibility = ["//visibility:private"],
+)
+
+go_library(
+    name = "app",
+    srcs = ["main.go"],
+    importpath = "github.com/omargallob/mono-repo-release/cmd/app",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/lib1",
+        "//pkg/lib2",
+    ],
 )
