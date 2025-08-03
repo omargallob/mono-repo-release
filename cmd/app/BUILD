@@ -24,10 +24,15 @@ go_library(
 
 go_test(
     name = "app_test",
-    srcs = ["main_test.go"],
+    srcs = [
+        "app_suite_test.go",
+        "main_test.go",
+    ],
     embed = [":app_lib"],
     deps = [
         "//pkg/lib1",
         "//pkg/lib2",
+        "@com_github_onsi_ginkgo_v2//:ginkgo",
+        "@com_github_onsi_gomega//:gomega",
     ],
 )
