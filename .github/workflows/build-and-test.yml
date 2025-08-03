@@ -44,7 +44,7 @@ jobs:
           bazel coverage //... --combined_report=lcov
           genhtml bazel-out/_coverage/_coverage_report.dat -o genhtml
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
             # Upload the coverage directory from the repository
             path: './genhtml'
