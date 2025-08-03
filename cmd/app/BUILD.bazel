@@ -5,6 +5,10 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/omargallob/mono-repo-release/cmd/app",
     visibility = ["//visibility:private"],
+    deps = [
+        "//pkg/lib1",
+        "//pkg/lib2",
+    ],
 )
 
 go_library(
