@@ -32,6 +32,7 @@ go_test(
     deps = [
         "//pkg/lib1",
         "//pkg/lib2",
+        "//test",
         "@com_github_onsi_ginkgo_v2//:ginkgo",
         "@com_github_onsi_gomega//:gomega",
     ],

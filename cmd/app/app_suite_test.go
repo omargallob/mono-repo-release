@@ -3,11 +3,9 @@ package main
 import (
 	"testing"
 
-	. "github.com/onsi/ginkgo/v2"
-	. "github.com/onsi/gomega"
+	"github.com/omargallob/mono-repo-release/test"
 )
 
 func TestApp(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "App Suite")
+	test.RegisterAndRunSpecs(t, "App Suite")
 }
