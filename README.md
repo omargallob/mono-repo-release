@@ -1,21 +1,53 @@
 # mono-repo-release
 
 - [mono-repo-release](#mono-repo-release)
+  - [Project Structure](#project-structure)
   - [Getting Started](#getting-started)
+  - [Quickstart with Makefile](#quickstart-with-makefile)
   - [1. Install Go](#1-install-go)
     - [macOS](#macos)
     - [Linux (Debian/Ubuntu)](#linux-debianubuntu)
   - [2. Install Bazel](#2-install-bazel)
     - [macOS](#macos-1)
     - [Linux](#linux)
-  - [3. Build and Test](#3-build-and-test)
-  - [4. Code Coverage](#4-code-coverage)
+  - [3. Build and Test (Manual)](#3-build-and-test-manual)
+  - [4. Code Coverage (Manual)](#4-code-coverage-manual)
     - [Viewing Coverage as HTML](#viewing-coverage-as-html)
-  - [5. Code Coverage Trick: Symbolic Link](#5-code-coverage-trick-symbolic-link)
+  - [5. Visualizing Coverage in VS Code](#5-visualizing-coverage-in-vs-code)
   - [6. Notes](#6-notes)
   - [7. Troubleshooting](#7-troubleshooting)
   - [8. More Info](#8-more-info)
 
+
+## Project Structure
+
+```
+mono-repo-release/
+├── .github/
+│   └── workflows/
+│       └── build-and-test.yml
+├── bazel-out/
+│   └── _coverage/
+│       └── _coverage_report.dat
+├── cmd/
+│   └── app/
+│       ├── main.go
+│       └── main_test.go
+├── pkg/
+│   ├── lib1/
+│   │   ├── BUILD.bazel
+│   │   ├── lib1.go
+│   │   └── lib1_test.go
+│   └── lib2/
+│       ├── BUILD.bazel
+│       ├── lib2.go
+│       └── lib2_test.go
+├── genhtml/
+│   └── index.html
+├── README.md
+├── Makefile
+└── WORKSPACE
+```
 
 ## Getting Started
 
