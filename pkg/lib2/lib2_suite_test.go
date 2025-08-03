@@ -3,11 +3,9 @@ package lib2
 import (
 	"testing"
 
-	. "github.com/onsi/ginkgo/v2"
-	. "github.com/onsi/gomega"
+	"github.com/omargallob/mono-repo-release/test"
 )
 
 func TestLib2(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "Lib2 Suite")
+	test.RegisterAndRunSpecs(t, "Lib2 Suite")
 }

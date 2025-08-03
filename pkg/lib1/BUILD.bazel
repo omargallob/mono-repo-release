@@ -15,6 +15,7 @@ go_test(
     ],
     embed = [":lib1"],
     deps = [
+        "//test",
         "@com_github_onsi_ginkgo_v2//:ginkgo",
         "@com_github_onsi_gomega//:gomega",
     ],
