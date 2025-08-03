@@ -5,3 +5,11 @@ gazelle(
     name = "gazelle",
     prefix = "github.com/omargallob/mono-repo-release",
 )
+
+# add go_sources target
+filegroup(
+    name = "go_sources",
+    srcs = glob(["**/*.go"]),
+    tags = ["automanaged"],
+    visibility = ["//visibility:public"],
+)
