@@ -44,11 +44,11 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-      - "^style:"
 
 release:
   footer: >-
 
     ---
 
-    Released by [Omar Gallo](https://github.com/omargallob).
+    Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
+# lib2/.goreleaser.yaml

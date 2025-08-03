@@ -13,7 +13,10 @@ check-deps:
 	@command -v lcov >/dev/null 2>&1 || echo "Warning: lcov not found. HTML coverage reports may not be available."
 	@echo "Checking for genhtml..."
 	@command -v genhtml >/dev/null 2>&1 || echo "Warning: genhtml not found. HTML coverage reports may not be available."
+	@echo "Checking for GoReleaser..."
+	@command -v goreleaser >/dev/null 2>&1 || (echo "GoReleaser is not installed. Please install GoReleaser." && exit 1)
 	@echo "All required tools checked."
+	
 
 build:
 	bazel build //...
