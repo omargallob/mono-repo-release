@@ -1,4 +1,5 @@
 load("@rules_go//go:def.bzl", "go_library", "go_test")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_image_index", "oci_push") 
 
 go_library(
     name = "lib2",
@@ -22,4 +23,11 @@ go_test(
         "@com_github_onsi_ginkgo_v2//:ginkgo",
         "@com_github_onsi_gomega//:gomega",
     ],
+)
+
+oci_image(
+    name = "lib2_image",    
+    architecture = "amd64",
+    entrypoint = ["/main.go"],
+    os = "linux",
 )
