@@ -1,0 +1,21 @@
+name: Build and Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - name: Install Bazelisk
+        uses: bazelbuild/setup-bazelisk@v3
+      - name: Build
+        run: bazel build //...
+      - name: Test
+        run: bazel test //...
