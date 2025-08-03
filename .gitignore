@@ -3,5 +3,7 @@
 /bazel-*
 
 genhtml/
+cover.out
 
 **/.DS_Store
+
