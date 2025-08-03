@@ -7,7 +7,11 @@ import (
 	"github.com/omargallob/mono-repo-release/pkg/lib2"
 )
 
-func main() {
+func RunApp() {
 	fmt.Println(lib1.Greet())
 	fmt.Println(lib2.Farewell())
+}
+
+func main() {
+	RunApp()
 }

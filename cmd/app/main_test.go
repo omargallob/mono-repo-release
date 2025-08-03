@@ -1,20 +1,34 @@
 package main
 
 import (
+	"bytes"
+	"os"
+	"strings"
 	"testing"
 
 	"github.com/omargallob/mono-repo-release/pkg/lib1"
 	"github.com/omargallob/mono-repo-release/pkg/lib2"
 )
 
-func TestMainOutput(t *testing.T) {
-	greet := lib1.Greet()
-	farewell := lib2.Farewell()
+// add a test for the runapp function
+func TestRunApp(t *testing.T) {
+	// Capture stdout
+	var buf bytes.Buffer
+	old := os.Stdout
+	r, w, _ := os.Pipe()
+	os.Stdout = w
 
-	if greet == "" {
-		t.Errorf("Expected non-empty greet message")
+	RunApp()
+
+	w.Close()
+	os.Stdout = old
+	buf.ReadFrom(r)
+	output := buf.String()
+
+	if !strings.Contains(output, lib1.Greet()) {
+		t.Errorf("Expected output to contain greet message: %q", lib1.Greet())
 	}
-	if farewell == "" {
-		t.Errorf("Expected non-empty farewell message")
+	if !strings.Contains(output, lib2.Farewell()) {
+		t.Errorf("Expected output to contain farewell message: %q", lib2.Farewell())
 	}
 }
