@@ -1,5 +1,5 @@
 load("@rules_go//go:def.bzl", "go_library", "go_test")
-load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_push")
 
 go_library(
     name = "lib2",
@@ -31,4 +31,11 @@ oci_image(
     architecture = "amd64",
     entrypoint = ["/main.go"],
     os = "linux",
+)
+
+oci_push(
+    name = "lib2_push",
+    image = ":lib2_image",    
+    remote_tags = ["latest"],
+    repository = "ghcr.io/omargallob/mono-repo-release/pkg/lib2",
 )
