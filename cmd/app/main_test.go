@@ -11,14 +11,15 @@ import (
 )
 
 // add a test for the runapp function
-func TestRunApp(t *testing.T) {
+func TestMain(t *testing.T) {
 	// Capture stdout
 	var buf bytes.Buffer
 	old := os.Stdout
 	r, w, _ := os.Pipe()
 	os.Stdout = w
 
-	RunApp()
+	// run the main entry point
+	main()
 
 	w.Close()
 	os.Stdout = old
