@@ -1,4 +1,4 @@
-load("@rules_go//go:def.bzl", "go_library")
+load("@rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
     name = "app_lib",
@@ -16,6 +16,16 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/omargallob/mono-repo-release/cmd/app",
     visibility = ["//visibility:public"],
+    deps = [
+        "//pkg/lib1",
+        "//pkg/lib2",
+    ],
+)
+
+go_test(
+    name = "app_test",
+    srcs = ["main_test.go"],
+    embed = [":app_lib"],
     deps = [
         "//pkg/lib1",
         "//pkg/lib2",

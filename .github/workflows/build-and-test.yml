@@ -24,3 +24,13 @@ jobs:
         run: bazel build //...
       - name: Test
         run: bazel test //...
+      - name: Generate Test Coverage  
+        run: |
+          bazel coverage //... --combined_report=lcov
+          genhtml bazel-out/_coverage/_coverage_report.dat -o genhtml
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: genhtml/index.html
+                
