@@ -20,9 +20,24 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
-      - windows
       - darwin
-
+    goarch: 
+      - amd64
+      - arm
+    ignore:
+      - goos: windows
+        goarch: arm     
+dockers:
+  - image_templates:
+      - "omargallob/monorepo/pkg/lib2:v{{ .Version }}-amd64"
+    dockerfile: Dockerfile
+    use: buildx
+    goarch: amd64
+  - image_templates:
+      - "omargallob/monorepo/pkg/lib2:v{{ .Version }}-arm64"
+    dockerfile: Dockerfile
+    use: buildx
+    goarch: arm64
 archives:
   - formats: [tar.gz]
     # this name template makes the OS and Arch compatible with the results of `uname`.
@@ -32,11 +47,7 @@ archives:
       {{- if eq .Arch "amd64" }}x86_64
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
-      {{- if .Arm }}v{{ .Arm }}{{ end }}
-    # use zip for windows archives
-    format_overrides:
-      - goos: windows
-        formats: [zip]
+      {{- if .Arm }}v{{ .Arm }}{{ end }}    
 
 changelog:
   sort: asc

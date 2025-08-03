@@ -25,8 +25,8 @@ go_library(
 go_test(
     name = "app_test",
     srcs = [
-        "suite_test.go",
         "main_test.go",
+        "suite_test.go",
     ],
     embed = [":app_lib"],
     deps = [
