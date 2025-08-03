@@ -16,9 +16,31 @@
   - [7. Troubleshooting](#7-troubleshooting)
   - [8. More Info](#8-more-info)
 
+
 ## Getting Started
 
-This repository uses Go and Bazel for building and testing. Follow the steps below to set up your environment and run the project.
+This repository uses Go and Bazel for building and testing. A Makefile is provided to simplify common tasks and check dependencies.
+
+---
+
+## Quickstart with Makefile
+
+First, check that all required tools are installed:
+
+```sh
+make check-deps
+```
+
+Build, test, and generate coverage with:
+
+```sh
+make build
+make test
+make coverage
+make coverage-html
+```
+
+See the Makefile for more details on available targets.
 
 ---
 
@@ -57,7 +79,10 @@ This repository uses Go and Bazel for building and testing. Follow the steps bel
 
 ---
 
-## 3. Build and Test
+
+## 3. Build and Test (Manual)
+
+If you prefer not to use the Makefile, you can run the following commands directly:
 
 ```sh
 bazel build //...
@@ -66,9 +91,9 @@ bazel test //...
 
 ---
 
-## 4. Code Coverage
+## 4. Code Coverage (Manual)
 
-To generate a code coverage report:
+To generate a code coverage report manually:
 
 ```sh
 bazel coverage //... --combined_report=lcov
@@ -89,15 +114,19 @@ Bazel will output a file at `bazel-out/_coverage/_coverage_report.dat`.
 
 ---
 
-## 5. Code Coverage Trick: Symbolic Link
 
-Some tools expect the coverage file at a specific location. If you encounter issues, create a symbolic link:
+## 5. Visualizing Coverage in VS Code
 
-```sh
-ln -sf $(pwd)/bazel-out/_coverage/_coverage_report.dat coverage.info
-```
+For a better developer experience, use the [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) extension in VS Code:
 
-This makes `coverage.info` point to the actual coverage data, which can help some CI tools or scripts find the report.
+1. Install the Coverage Gutters extension from the VS Code Marketplace.
+2. Generate the coverage report as described above:
+   ```sh
+   bazel coverage //... --combined_report=lcov
+   ```
+3. In VS Code, open the command palette and select `Coverage Gutters: Display Coverage`.
+4. Select the file `bazel-out/_coverage/_coverage_report.dat` when prompted.
+5. The extension will highlight covered and uncovered lines directly in your editor.
 
 ---
 
@@ -108,7 +137,7 @@ This makes `coverage.info` point to the actual coverage data, which can help som
 ---
 
 ## 7. Troubleshooting
-- If you see `lcov: ERROR: no gcov kernel data found`, it usually means the coverage file is missing or not in the expected format. Ensure you use Bazel's output file directly with `genhtml`.
+- If you see `lcov: ERROR: no gcov kernel data found`, it usually means the coverage file is missing or not in the expected format. Ensure you use Bazel's output file directly with `genhtml` or Coverage Gutters.
 
 ---
 
@@ -116,3 +145,4 @@ This makes `coverage.info` point to the actual coverage data, which can help som
 - [Go Documentation](https://go.dev/doc/)
 - [Bazel Documentation](https://bazel.build/)
 - [LCOV/Genhtml](http://ltp.sourceforge.net/coverage/lcov.php)
+- [Coverage Gutters Extension](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters)
