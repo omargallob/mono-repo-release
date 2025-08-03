@@ -31,3 +31,8 @@ coverage-html: coverage
 	@command -v genhtml >/dev/null 2>&1 || (echo "genhtml not found. Please install lcov/genhtml." && exit 1)
 	genhtml bazel-out/_coverage/_coverage_report.dat -o genhtml
 	@echo "Open genhtml/index.html in your browser to view the report."
+
+clean:
+	bazel clean --expunge
+	bazel run //:gazelle -- update-repos -from_file=go.mod
+	bazel run //:gazelle
