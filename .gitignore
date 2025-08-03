@@ -9,3 +9,5 @@ cover.out
 **/.DS_Store
 
 lcov.info/
+# Added by goreleaser init:
+dist/
