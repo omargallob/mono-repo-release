@@ -10,8 +10,8 @@ go_library(
 go_test(
     name = "lib1_test",
     srcs = [
-        "lib1_suite_test.go",
         "lib1_test.go",
+        "suite_test.go",
     ],
     embed = [":lib1"],
     deps = [
