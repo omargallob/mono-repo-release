@@ -9,12 +9,12 @@ go_library(
 
 go_test(
     name = "lib1_test",
+    size = "small",
+    timeout = "short",
     srcs = [
         "lib1_test.go",
         "suite_test.go",
     ],
-    timeout = "short",
-    size = "small",
     embed = [":lib1"],
     deps = [
         "//test",

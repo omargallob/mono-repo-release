@@ -12,13 +12,13 @@ go_library(
 
 go_test(
     name = "lib2_test",
+    size = "small",
+    timeout = "short",
     srcs = [
         "lib2_test.go",
         "suite_test.go",
     ],
     embed = [":lib2"],
-    timeout = "short",
-    size = "small",
     deps = [
         "//test",
         "@com_github_onsi_ginkgo_v2//:ginkgo",

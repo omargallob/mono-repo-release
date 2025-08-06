@@ -1,0 +1,19 @@
+# Use prebuilt golangci-lint binary with run_binary
+load("@bazel_skylib//rules:run_binary.bzl", "run_binary")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
+
+http_file(
+    name = "golangci_lint_darwin_amd64_tarball",
+    urls = ["https://github.com/golangci/golangci-lint/releases/download/v2.3.1/golangci-lint-2.3.1-darwin-amd64.tar.gz"],
+    downloaded_file_path = "golangci-lint-2.3.1-darwin-amd64/golangci-lint",
+    # Optionally, you can add sha256 for integrity
+    # sha256 = "<sha256sum>",
+)
+
+run_binary(
+    name = "golangci-lint",
+    srcs = ["@golangci_lint_darwin_amd64_tarball//file"],
+    args = [],
+    visibility = ["//visibility:public"],
+)
