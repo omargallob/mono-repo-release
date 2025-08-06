@@ -29,6 +29,8 @@ go_test(
         "suite_test.go",
     ],
     embed = [":app_lib"],
+    timeout = "short",
+    size = "small",
     deps = [
         "//pkg/lib1",
         "//pkg/lib2",

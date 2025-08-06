@@ -13,6 +13,8 @@ go_test(
         "lib1_test.go",
         "suite_test.go",
     ],
+    timeout = "short",
+    size = "small",
     embed = [":lib1"],
     deps = [
         "//test",
