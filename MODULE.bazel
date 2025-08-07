@@ -1,4 +1,6 @@
+# Add golangci-lint as a bzlmod dependency using http_archive
 
+"""Module definition for mono-repo-release Bazel project."""
 
 module(
     name = "mono-repo-release",
@@ -21,13 +23,26 @@ go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_mod = "//:go.mod")
 use_repo(
     go_deps,
-    "com_github_stretchr_testify",
+    "com_github_bazelbuild_buildtools",
     "com_github_onsi_ginkgo_v2",
     "com_github_onsi_gomega",
+    "com_github_stretchr_testify",
 )
 
 # Dev dependencies
 
 bazel_dep(name = "bazel_env.bzl", version = "0.3.1", dev_dependency = True)
 bazel_dep(name = "bazel_skylib_gazelle_plugin", version = "1.4.1", dev_dependency = True)
+bazel_dep(name = "bazel_skylib", version = "1.8.1", dev_dependency = True, repo_name = "bazel_skylib")
 
+bazel_dep(name = "download_utils", version = "1.0.1")
+
+# binary downloads using download_utils
+download_file = use_repo_rule("@download_utils//download/file:defs.bzl", "download_file")
+
+download_file(
+    name = "golangci_lint_darwin_arm64_bin",
+    executable = True,
+    output = "golangci-lint",
+    urls = ["https://github.com/golangci/golangci-lint/releases/download/v2.3.1/golangci-lint-2.3.1-darwin-arm64/golangci-lint"],
+)
