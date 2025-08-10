@@ -10,12 +10,6 @@ go_library(
     visibility = ["//visibility:public"],
 )
 
-go_binary(
-    name = "lib2_bin",
-    embed = [":lib2"],
-    visibility = ["//visibility:public"],
-)
-
 go_test(
     name = "lib2_test",
     size = "small",
