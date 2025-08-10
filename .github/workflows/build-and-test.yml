@@ -17,6 +17,7 @@ permissions:
 jobs:
 
   build:
+    needs: [lint]
     environment:
       name: github-pages-test
       url: ${{ steps.deployment.outputs.page_url }}
