@@ -1,0 +1,19 @@
+Main:
+  files:
+  - $all
+  - "!$test"
+  allow:
+  - $gostd
+  - github.com/omargallob/mono-repo-release/pkg/lib1
+  - github.com/omargallob/mono-repo-release/pkg/lib2
+  deny:
+    reflect: Please don't use reflect package
+Test:
+  files:
+  - $test
+  allow:
+  - $gostd
+  - github.com/omargallob/mono-repo-release/pkg/lib1
+  - github.com/omargallob/mono-repo-release/pkg/lib2
+  deny:
+    reflect: Please don't use reflect package

@@ -5,7 +5,6 @@ go_library(
     srcs = [
         "lib2.go",
         "version.go",
-        "main.go"
     ],
     importpath = "github.com/omargallob/mono-repo-release/pkg/lib2",
     visibility = ["//visibility:private"],
