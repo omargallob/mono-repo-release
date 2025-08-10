@@ -7,7 +7,7 @@ go_library(
         "version.go",
     ],
     importpath = "github.com/omargallob/mono-repo-release/pkg/lib2",
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
 )
 
 go_binary(
