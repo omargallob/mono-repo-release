@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"os"
 
-	"github.com/omargallob/mono-repo-release/pkg/lib1"
-	"github.com/omargallob/mono-repo-release/pkg/lib2"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
+
+	"github.com/omargallob/mono-repo-release/pkg/lib1"
+	"github.com/omargallob/mono-repo-release/pkg/lib2"
 )
 
 var _ = Describe("main", func() {
