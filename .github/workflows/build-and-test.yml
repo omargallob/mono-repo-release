@@ -15,7 +15,9 @@ permissions:
 #   cancel-in-progress: true
 
 jobs:
+
   build:
+    needs: golangci
     environment:
       name: github-pages-test
       url: ${{ steps.deployment.outputs.page_url }}
