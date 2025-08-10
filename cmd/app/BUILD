@@ -24,13 +24,13 @@ go_library(
 
 go_test(
     name = "app_test",
+    size = "small",
+    timeout = "short",
     srcs = [
         "main_test.go",
         "suite_test.go",
     ],
     embed = [":app_lib"],
-    timeout = "short",
-    size = "small",
     deps = [
         "//pkg/lib1",
         "//pkg/lib2",

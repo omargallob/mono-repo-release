@@ -1,4 +1,4 @@
-package lib2
+package lib2_test
 
 import (
 	"testing"

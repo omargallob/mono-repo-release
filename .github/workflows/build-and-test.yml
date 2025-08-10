@@ -15,13 +15,14 @@ permissions:
 #   cancel-in-progress: true
 
 jobs:
+
   build:
     environment:
       name: github-pages-test
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4        
       - name: Set up Go
         uses: actions/setup-go@v5
         with:

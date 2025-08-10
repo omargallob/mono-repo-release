@@ -1,7 +1,12 @@
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 load("@gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix github.com/omargallob/mono-repo-release
 gazelle(
     name = "gazelle",
     prefix = "github.com/omargallob/mono-repo-release",
+)
+
+buildifier(
+    name = "buildifier",
 )

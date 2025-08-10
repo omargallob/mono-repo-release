@@ -13,8 +13,10 @@ check-deps:
 	@command -v lcov >/dev/null 2>&1 || echo "Warning: lcov not found. HTML coverage reports may not be available."
 	@echo "Checking for genhtml..."
 	@command -v genhtml >/dev/null 2>&1 || echo "Warning: genhtml not found. HTML coverage reports may not be available."
+	@echo "Checking for golangci-lint..."
+	@command -v golangci-lint >/dev/null 2>&1 || echo "Warning: golangci-lint not found. Please install golangci-lint."
 	@echo "All required tools checked."
-
+	
 build:
 	bazel build //...
 
