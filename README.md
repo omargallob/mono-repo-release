@@ -1,4 +1,6 @@
 # mono-repo-release
+![Build and Test](https://git.i.mercedes-benz.com/OMGALLO/mono-repo-release/actions/workflows/build-and-test.yml/badge.svg)
+![Lint](https://git.i.mercedes-benz.com/OMGALLO/mono-repo-release/actions/workflows/golangci-lint.yml/badge.svg)
 
 - [mono-repo-release](#mono-repo-release)
   - [Project Structure](#project-structure)
