@@ -1,7 +1,4 @@
 {
-    ".": {
-        "version": "1.2.1"
-    },
     "pkg/lib1": {
         "releaseType": "go",
         "version": "0.1.0",
