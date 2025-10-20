@@ -1,34 +1,35 @@
-".": {
-    "version": "1.2.0",
-    "releaseType": "go",
-    "changelogPath": "CHANGELOG.md",
-    "bumpMinorPreMajor": false
-},
-"pkg/lib1": {
-    "releaseType": "go",
-    "component": "lib1",
-    "changelogPath": "pkg/lib1/CHANGELOG.md",
-    "packageName": "github.com/omargallob/mono-repo-release/pkg/lib1",
-    "includeComponent": true,
-    "tagSeparator": ":",
-    "tagName": "lib1:v${version}"
-},
-"pkg/lib2": {
-    "releaseType": "go",
-    "component": "lib2",
-    "changelogPath": "pkg/lib2/CHANGELOG.md",
-    "packageName": "github.com/omargallob/mono-repo-release/pkg/lib2",
-    "includeComponent": true,
-    "tagSeparator": ":",
-    "tagName": "lib2:v${version}"
-},
-"cmd/app": {
-    "releaseType": "go",
-    "component": "app",
-    "changelogPath": "cmd/app/CHANGELOG.md",
-    "packageName": "github.com/omargallob/mono-repo-release/cmd/app",
-    "includeComponent": true,
-    "tagSeparator": ":",
-    "tagName": "app:v${version}"
-}
+{
+    ".": {
+        "version": "1.2.0",
+        "releaseType": "go",
+        "changelogPath": "CHANGELOG.md",
+        "bumpMinorPreMajor": false
+    },
+    "pkg/lib1": {
+        "releaseType": "go",
+        "component": "lib1",
+        "changelogPath": "pkg/lib1/CHANGELOG.md",
+        "packageName": "github.com/omargallob/mono-repo-release/pkg/lib1",
+        "includeComponent": true,
+        "tagSeparator": ":",
+        "tagName": "lib1:v${version}"
+    },
+    "pkg/lib2": {
+        "releaseType": "go",
+        "component": "lib2",
+        "changelogPath": "pkg/lib2/CHANGELOG.md",
+        "packageName": "github.com/omargallob/mono-repo-release/pkg/lib2",
+        "includeComponent": true,
+        "tagSeparator": ":",
+        "tagName": "lib2:v${version}"
+    },
+    "cmd/app": {
+        "releaseType": "go",
+        "component": "app",
+        "changelogPath": "cmd/app/CHANGELOG.md",
+        "packageName": "github.com/omargallob/mono-repo-release/cmd/app",
+        "includeComponent": true,
+        "tagSeparator": ":",
+        "tagName": "app:v${version}"
+    }
 }
