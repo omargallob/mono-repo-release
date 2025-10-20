@@ -1,10 +1,5 @@
 {
-    ".": {
-        "version": "1.2.0",
-        "releaseType": "go",
-        "changelogPath": "CHANGELOG.md",
-        "bumpMinorPreMajor": false
-    },
+    ".": "1.2.1",
     "pkg/lib1": {
         "releaseType": "go",
         "component": "lib1",
