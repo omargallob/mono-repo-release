@@ -1,5 +1,5 @@
 {
-    "bootstrap-sha": "HEAD",
+    "bootstrap-sha": "e81bbeb64ddd141adc4e9761b7e220c228b5db3b",
     "separate-pull-requests": true,
     "group-pull-request-title-pattern": "chore: release ${component} ${version}",
     "pull-request-title-pattern": "chore: release ${component} ${version}",
