@@ -1,5 +1,5 @@
 {
-    ".": "1.1.0",
+    ".": "1.2.0",
     "pkg/lib1": {
         "releaseType": "go",
         "component": "lib1",
