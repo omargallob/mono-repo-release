@@ -21,13 +21,10 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           release-type: go
-          command: manifest
           config-file: .release-please-config.json
           manifest-file: .release-please-manifest.json
-          monorepo-tags: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          signoff: "Release-Please-Bot <support@github.com>"
-          default-branch: main
+          include-component-in-tag: true
 
   goreleaser:
     needs: release-please
