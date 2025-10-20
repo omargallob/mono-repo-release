@@ -24,12 +24,13 @@
             2,
             "always",
             [
-                "lib1",
-                "lib2",
-                "app",
+                "pkg/lib1",
+                "pkg/lib2",
+                "cmd/app",
                 "build",
                 "ci",
-                "deps"
+                "deps",
+                "main"
             ]
         ],
         "subject-max-length": [
