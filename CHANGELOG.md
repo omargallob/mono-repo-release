@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0](https://github.com/omargallob/mono-repo-release/compare/v1.1.0...v1.2.0) (2025-10-20)
+
+
+### Features
+
+* **lib2:** added ascii art function ([#10](https://github.com/omargallob/mono-repo-release/issues/10)) ([4e9b830](https://github.com/omargallob/mono-repo-release/commit/4e9b830309c68089729fa43fc9f3b5514da65d4b))
+
 ## [1.1.0](https://github.com/omargallob/mono-repo-release/compare/v1.0.1...v1.1.0) (2025-10-20)
 
 
