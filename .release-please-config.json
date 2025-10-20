@@ -1,0 +1,21 @@
+{
+    "bootstrap-sha": "HEAD",
+    "release-type": "go",
+    "packages": {
+        ".": {
+            "release-type": "go"
+        },
+        "pkg/lib1": {
+            "release-type": "go"
+        },
+        "pkg/lib2": {
+            "release-type": "go"
+        },
+        "cmd/app": {
+            "release-type": "go"
+        }
+    },
+    "plugins": [
+        "sentence-case"
+    ]
+}
