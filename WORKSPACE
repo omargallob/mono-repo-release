@@ -202,3 +202,108 @@ go_repository(
     sum = "h1:O3y2/QNTOdbF+e/dpXNNW7Rx2hZ4sTIPyybbxyNqTUs=",
     version = "v1.6.0",
 )
+
+go_repository(
+    name = "com_github_aymanbagabas_go_osc52_v2",
+    importpath = "github.com/aymanbagabas/go-osc52/v2",
+    sum = "h1:HwpRHbFMcZLEVr42D4p7XBqjyuxQH5SMiErDT4WkJ2k=",
+    version = "v2.0.1",
+)
+
+go_repository(
+    name = "com_github_aymanbagabas_go_udiff",
+    importpath = "github.com/aymanbagabas/go-udiff",
+    sum = "h1:TK0fH4MteXUDspT88n8CKzvK0X9O2xu9yQjWpi6yML8=",
+    version = "v0.2.0",
+)
+
+go_repository(
+    name = "com_github_charmbracelet_colorprofile",
+    importpath = "github.com/charmbracelet/colorprofile",
+    sum = "h1:4pZI35227imm7yK2bGPcfpFEmuY1gc2YSTShr4iJBfs=",
+    version = "v0.2.3-0.20250311203215-f60798e515dc",
+)
+
+go_repository(
+    name = "com_github_charmbracelet_lipgloss",
+    importpath = "github.com/charmbracelet/lipgloss",
+    sum = "h1:vYXsiLHVkK7fp74RkV7b2kq9+zDLoEU4MZoFqR/noCY=",
+    version = "v1.1.0",
+)
+
+go_repository(
+    name = "com_github_charmbracelet_x_ansi",
+    importpath = "github.com/charmbracelet/x/ansi",
+    sum = "h1:9GTq3xq9caJW8ZrBTe0LIe2fvfLR/bYXKTx2llXn7xE=",
+    version = "v0.8.0",
+)
+
+go_repository(
+    name = "com_github_charmbracelet_x_cellbuf",
+    importpath = "github.com/charmbracelet/x/cellbuf",
+    sum = "h1:vy0GVL4jeHEwG5YOXDmi86oYw2yuYUGqz6a8sLwg0X8=",
+    version = "v0.0.13-0.20250311204145-2c3ea96c31dd",
+)
+
+go_repository(
+    name = "com_github_charmbracelet_x_exp_golden",
+    importpath = "github.com/charmbracelet/x/exp/golden",
+    sum = "h1:G99klV19u0QnhiizODirwVksQB91TJKV/UaTnACcG30=",
+    version = "v0.0.0-20240806155701-69247e0abc2a",
+)
+
+go_repository(
+    name = "com_github_charmbracelet_x_term",
+    importpath = "github.com/charmbracelet/x/term",
+    sum = "h1:AQeHeLZ1OqSXhrAWpYUtZyX1T3zVxfpZuEQMIQaGIAQ=",
+    version = "v0.2.1",
+)
+
+go_repository(
+    name = "com_github_lucasb_eyer_go_colorful",
+    importpath = "github.com/lucasb-eyer/go-colorful",
+    sum = "h1:1nnpGOrhyZZuNyfu1QjKiUICQ74+3FNCN69Aj6K7nkY=",
+    version = "v1.2.0",
+)
+
+go_repository(
+    name = "com_github_mattn_go_isatty",
+    importpath = "github.com/mattn/go-isatty",
+    sum = "h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=",
+    version = "v0.0.20",
+)
+
+go_repository(
+    name = "com_github_mattn_go_runewidth",
+    importpath = "github.com/mattn/go-runewidth",
+    sum = "h1:E5ScNMtiwvlvB5paMFdw9p4kSQzbXFikJ5SQO6TULQc=",
+    version = "v0.0.16",
+)
+
+go_repository(
+    name = "com_github_muesli_termenv",
+    importpath = "github.com/muesli/termenv",
+    sum = "h1:S5AlUN9dENB57rsbnkPyfdGuWIlkmzJjbFf0Tf5FWUc=",
+    version = "v0.16.0",
+)
+
+go_repository(
+    name = "com_github_rivo_uniseg",
+    importpath = "github.com/rivo/uniseg",
+    sum = "h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=",
+    version = "v0.4.7",
+)
+
+go_repository(
+    name = "com_github_xo_terminfo",
+    importpath = "github.com/xo/terminfo",
+    sum = "h1:JVG44RsyaB9T2KIHavMF/ppJZNG9ZpyihvCd0w101no=",
+    version = "v0.0.0-20220910002029-abceb7e1c41e",
+)
+
+go_repository(
+    name = "org_golang_x_exp",
+    importpath = "golang.org/x/exp",
+    sum = "h1:MDc5xs78ZrZr3HMQugiXOAkSZtfTpbJLDr/lwfgO53E=",
+    version = "v0.0.0-20220909182711-5c715a9e8561",
+)

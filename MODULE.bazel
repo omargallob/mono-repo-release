@@ -27,7 +27,8 @@ use_repo(
     "com_github_stretchr_testify",
     "com_github_onsi_ginkgo_v2",
     "com_github_onsi_gomega",
-    "com_github_bazelbuild_buildtools"
+    "com_github_bazelbuild_buildtools",
+    "com_github_charmbracelet_lipgloss"
 )
 
 # Dev dependencies
