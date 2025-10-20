@@ -5,13 +5,6 @@
     "pull-request-title-pattern": "chore: release ${component} ${version}",
     "release-type": "go",
     "packages": {
-        ".": {
-            "release-type": "go",
-            "package-name": "mono-repo-release",
-            "changelog-path": "CHANGELOG.md",
-            "include-v-in-tag": true,
-            "include-component-in-tag": false
-        },
         "pkg/lib1": {
             "release-type": "go",
             "package-name": "lib1",
