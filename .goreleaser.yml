@@ -106,8 +106,12 @@ release:
     name: "{{ .ProjectName }}"
   draft: false
   prerelease: auto
-  mode: replace
-  name_template: "{{.ProjectName}} v{{.Version}}"
+  mode: append
+  ids:
+    - app
+    - lib1
+    - lib2
+  name_template: "{{.ProjectName}} {{.Tag}}"
   header: |
     ## What's new in {{ .ProjectName }} v{{ .Version }}
 
