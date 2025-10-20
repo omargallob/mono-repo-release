@@ -1,6 +1,6 @@
 package lib2
 
-// add a nice header function using tui library
+// add a nice header function using tui library.
 import (
 	"github.com/charmbracelet/lipgloss"
 )
@@ -34,7 +34,7 @@ func Header() string {
 	return headerStyle.Render("Welcome to lib2!")
 }
 
-// add Header to FarewellWithArt
+// add Header to FarewellWithArt.
 func FarewellWithHeaderAndArt() string {
 	return Header() + "\n" + Farewell() + "\n" + AsciiArt()
 }

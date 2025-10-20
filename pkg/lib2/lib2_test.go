@@ -24,7 +24,7 @@ var _ = Describe("Farewell", func() {
 		Expect(lib2.AsciiArt()).To(Equal(expectedArt))
 	})
 
-	// New test for FarewellWithArt function
+	// New test for FarewellWithArt function.
 	It("returns the correct farewell message with ASCII art", func() {
 		expectedMessage := "Good bye from lib2\n" + `
    _____
@@ -36,7 +36,7 @@ var _ = Describe("Farewell", func() {
 `
 		Expect(lib2.FarewellWithArt()).To(Equal(expectedMessage))
 	})
-	// New test for Header function
+	// New test for Header function.
 	It("returns the correct header message", func() {
 		expectedHeader := lib2.Header()
 		Expect(expectedHeader).To(ContainSubstring("Welcome to lib2!"))
