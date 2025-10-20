@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/omargallob/mono-repo-release/compare/v1.3.0...v2.0.0) (2025-10-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* introduction of release please and goreleaser
+
+### Features
+
+* add glance-lint configuration and deps in makefile ([#5](https://github.com/omargallob/mono-repo-release/issues/5)) ([56aaf4d](https://github.com/omargallob/mono-repo-release/commit/56aaf4d27dba91cbd2ec194af78d0dc1b61edbd7))
+* **ci:** add code coverage via bazel ([#1](https://github.com/omargallob/mono-repo-release/issues/1)) ([8eb610d](https://github.com/omargallob/mono-repo-release/commit/8eb610df15465aee3e89605590bd60508dc2ab76))
+* **ci:** monorepo release ([#8](https://github.com/omargallob/mono-repo-release/issues/8)) ([9bbaa85](https://github.com/omargallob/mono-repo-release/commit/9bbaa85e58e46730c6f9c28861bace5a5a956f38))
+* introduction of release please and goreleaser ([fb2138f](https://github.com/omargallob/mono-repo-release/commit/fb2138f7105ea3f9dfc90213028080c198025f8e))
+* **lib2:** added ascii art function ([#10](https://github.com/omargallob/mono-repo-release/issues/10)) ([4e9b830](https://github.com/omargallob/mono-repo-release/commit/4e9b830309c68089729fa43fc9f3b5514da65d4b))
+* **pkg/lib1:** added a readme ([68bd5cd](https://github.com/omargallob/mono-repo-release/commit/68bd5cd98a6267b65e411bfd2a03ddf75e7d694e))
+* switch to ginkgo ([#2](https://github.com/omargallob/mono-repo-release/issues/2)) ([2ea5471](https://github.com/omargallob/mono-repo-release/commit/2ea54717ad7e0486ad4dc82c68742f32c5fc56c0))
+* switch to ginkgo testing ([#3](https://github.com/omargallob/mono-repo-release/issues/3)) ([e7cd505](https://github.com/omargallob/mono-repo-release/commit/e7cd505f149eab21dd5a7255790d93d2dcd8f981))
+
+
+### Bug Fixes
+
+* **ci:** commitlint and rp to use correct scopes ([5897dcb](https://github.com/omargallob/mono-repo-release/commit/5897dcbfd4c3f759baff9bb2c08c5ed3f0254296))
+* **ci:** update the values for the action ([83bde52](https://github.com/omargallob/mono-repo-release/commit/83bde526641e36513f7596b84a10ca33dea6c416))
+* **lib2:** included packages to test updates ([#12](https://github.com/omargallob/mono-repo-release/issues/12)) ([a338f35](https://github.com/omargallob/mono-repo-release/commit/a338f35ad96eb07b24f009403b2ebfc33c21dbd8))
+* **lib2:** resolve memory leak ([e0a1e17](https://github.com/omargallob/mono-repo-release/commit/e0a1e17e8e980fa1a1b6242af89a6c6e7f187ccb))
+* **pkg/lib1:** update readme ([1d5df23](https://github.com/omargallob/mono-repo-release/commit/1d5df234fc2f4d3071fe8df793544cacafea01f1))
+* **pkg/lib2:** added a readme ([4ac4a56](https://github.com/omargallob/mono-repo-release/commit/4ac4a563c2b5f9491b6a8edf54ee79ff04e526c9))
+* **pkg/lib2:** included bs readme ([d97451d](https://github.com/omargallob/mono-repo-release/commit/d97451db7fe503d040e530311101029e9dde2fe6))
+* use correct github ation ([9686a75](https://github.com/omargallob/mono-repo-release/commit/9686a75bbc1e7bbe833fd32db2419d2f4e4f5ced))
+
 ## [1.3.0](https://github.com/omargallob/mono-repo-release/compare/v1.2.1...v1.3.0) (2025-10-20)
 
 
