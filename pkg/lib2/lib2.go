@@ -4,7 +4,7 @@ func Farewell() string {
 	return "Good bye from lib2"
 }
 
-// add a simple function to be tested along the lines of farwell, maybe an ascii art
+// descriptor for an ASCII art function.
 func AsciiArt() string {
 	return `
    _____
@@ -16,7 +16,7 @@ func AsciiArt() string {
 `
 }
 
-// a call that uses both functions
+// a call that uses both functions.
 func FarewellWithArt() string {
 	return Farewell() + "\n" + AsciiArt()
 }
