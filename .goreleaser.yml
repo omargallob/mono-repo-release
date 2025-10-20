@@ -28,10 +28,9 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X main.version={{.Version}}
+      - -X main.version={{ trimprefix .Tag "app:v" }}
       - -X main.commit={{.Commit}}
       - -X main.date={{.Date}}
-      - -X main.builtBy=goreleaser
 
   # Lib1 CLI tool
   - id: lib1-cli
