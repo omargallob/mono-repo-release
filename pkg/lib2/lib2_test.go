@@ -10,4 +10,30 @@ var _ = Describe("Farewell", func() {
 	It("returns the correct farewell message", func() {
 		Expect(lib2.Farewell()).To(Equal("Good bye from lib2"))
 	})
+
+	// New test for AsciiArt function
+	It("returns the correct ASCII art", func() {
+		expectedArt := `
+   _____
+  /     \
+ | () () |
+  \  ^  /
+   |||||
+   |||||
+`
+		Expect(lib2.AsciiArt()).To(Equal(expectedArt))
+	})
+
+	// New test for FarewellWithArt function
+	It("returns the correct farewell message with ASCII art", func() {
+		expectedMessage := "Good bye from lib2\n" + `
+   _____
+  /     \
+ | () () |
+  \  ^  /
+   |||||
+   |||||
+`
+		Expect(lib2.FarewellWithArt()).To(Equal(expectedMessage))
+	})
 })
