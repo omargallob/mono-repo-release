@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0](https://github.com/omargallob/mono-repo-release/compare/v2.0.0...v2.1.0) (2025-10-20)
+
+
+### Features
+
+* **pkg/lib1:** added a readme ([70f4507](https://github.com/omargallob/mono-repo-release/commit/70f450715193e72819803cc6c6534bb032313544))
+
+
+### Bug Fixes
+
+* **ci:** set initial bootstap sha ([da41c49](https://github.com/omargallob/mono-repo-release/commit/da41c49158afc5f1d28c307d7fb703f105e8d3e5))
+
 ## [2.0.0](https://github.com/omargallob/mono-repo-release/compare/v1.3.0...v2.0.0) (2025-10-20)
 
 
