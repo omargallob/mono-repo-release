@@ -60,7 +60,7 @@ jobs:
         with:
           distribution: goreleaser
           version: "~> v2"
-          args: release --clean -f pkg/${{ matrix.package }}/.goreleaser.yml
+          args: release --clean --rm-dist -f pkg/${{ matrix.package }}/.goreleaser.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
