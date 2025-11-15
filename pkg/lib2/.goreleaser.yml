@@ -3,7 +3,7 @@
 
 version: 2
 
-project_name: mono-repo-release
+project_name: mono-repo-release:lib2
 
 before:
   hooks:
@@ -13,42 +13,6 @@ before:
     - go test ./...
 
 builds:
-  # Main application
-  - id: app
-    main: ./cmd/app
-    binary: mono-repo-app
-    env:
-      - CGO_ENABLED=0
-    goos:
-      - linux
-      - darwin
-      - windows
-    goarch:
-      - amd64
-      - arm64
-    ldflags:
-      - -s -w
-      - -X main.version={{ trimprefix .Tag "app:v" }}
-      - -X main.commit={{.Commit}}
-      - -X main.date={{.Date}}
-
-  # Lib1 CLI tool
-  - id: lib1-cli
-    main: ./pkg/lib1/cmd
-    binary: lib1-cli
-    env:
-      - CGO_ENABLED=0
-    goos:
-      - linux
-      - darwin
-      - windows
-    goarch:
-      - amd64
-      - arm64
-    ldflags:
-      - -s -w
-      - -X main.version={{.Version}}
-
   # Lib2 CLI tool
   - id: lib2-cli
     main: ./pkg/lib2/cmd
@@ -58,7 +22,6 @@ builds:
     goos:
       - linux
       - darwin
-      - windows
     goarch:
       - amd64
       - arm64
@@ -77,29 +40,6 @@ archives:
 checksum:
   name_template: "checksums.txt"
 
-changelog:
-  sort: asc
-  use: github
-  filters:
-    exclude:
-      - "^docs:"
-      - "^test:"
-      - "^ci:"
-      - "^chore:"
-      - "^build:"
-  groups:
-    - title: Features
-      regexp: '^.*?feat(\([[:word:]]+\))??!?:.+$'
-      order: 0
-    - title: "Bug fixes"
-      regexp: '^.*?fix(\([[:word:]]+\))??!?:.+$'
-      order: 1
-    - title: "Performance improvements"
-      regexp: '^.*?perf(\([[:word:]]+\))??!?:.+$'
-      order: 2
-    - title: Others
-      order: 999
-
 release:
   github:
     owner: "{{ .Env.GITHUB_REPOSITORY_OWNER }}"
@@ -108,8 +48,6 @@ release:
   prerelease: auto
   mode: append
   ids:
-    - app
-    - lib1
     - lib2
   name_template: "{{.ProjectName}} {{.Tag}}"
   header: |

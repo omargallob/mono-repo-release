@@ -1,8 +1,8 @@
 {
     "bootstrap-sha": "e81bbeb64ddd141adc4e9761b7e220c228b5db3b",
-    "separate-pull-requests": true,
-    "group-pull-request-title-pattern": "chore: release ${component} ${version}",
-    "pull-request-title-pattern": "chore: release ${component} ${version}",
+    "separate-pull-requests": false,
+    "group-pull-request-title-pattern": "chore: release ${version}",
+    "pull-request-title-pattern": "chore: release ${version}",
     "release-type": "go",
     "packages": {
         ".": {
@@ -11,27 +11,6 @@
             "changelog-path": "CHANGELOG.md",
             "include-v-in-tag": true,
             "include-component-in-tag": false
-        },
-        "pkg/lib1": {
-            "release-type": "go",
-            "package-name": "lib1",
-            "changelog-path": "pkg/lib1/CHANGELOG.md",
-            "include-v-in-tag": true,
-            "include-component-in-tag": true
-        },
-        "pkg/lib2": {
-            "release-type": "go",
-            "package-name": "lib2",
-            "changelog-path": "pkg/lib2/CHANGELOG.md",
-            "include-v-in-tag": true,
-            "include-component-in-tag": true
-        },
-        "cmd/app": {
-            "release-type": "go",
-            "package-name": "app",
-            "changelog-path": "cmd/app/CHANGELOG.md",
-            "include-v-in-tag": true,
-            "include-component-in-tag": true
         }
     },
     "plugins": [
