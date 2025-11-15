@@ -1,0 +1,41 @@
+# GoReleaser configuration for mono-repo-release
+# Documentation: https://goreleaser.com
+
+version: 2
+
+project_name: mono-repo-release
+
+before:
+  hooks:
+    # Ensure dependencies are up to date
+    - go mod tidy
+    # Run tests before building
+    - go test ./...
+
+builds:
+  # Lib2 CLI tool
+  - id: lib2-cli
+    main: ./pkg/lib2/cmd/main.go
+    binary: lib2-cli
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+
+archives:
+  - id: default
+    formats: [tar.gz]
+    files:
+      - README.md
+      - LICENSE*
+      - CHANGELOG.md
+
+checksum:
+  name_template: "checksums.txt"
