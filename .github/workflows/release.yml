@@ -33,9 +33,6 @@ jobs:
     permissions:
       contents: write
       packages: write
-    strategy:
-      matrix:
-        component: [app, lib1, lib2]
     steps:
       - name: Checkout
         uses: actions/checkout@v4

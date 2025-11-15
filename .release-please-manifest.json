@@ -1,33 +1,3 @@
 {
-    "pkg/lib1": {
-        "releaseType": "go",
-        "version": "0.1.0",
-        "component": "pkg/lib1",
-        "changelogPath": "pkg/lib1/CHANGELOG.md",
-        "packageName": "github.com/omargallob/mono-repo-release/pkg/lib1",
-        "includeComponent": true,
-        "tagSeparator": ":",
-        "tagName": "lib1:v${version}"
-    },
-    "pkg/lib2": {
-        "releaseType": "go",
-        "version": "0.1.0",
-        "component": "pkg/lib2",
-        "changelogPath": "pkg/lib2/CHANGELOG.md",
-        "packageName": "github.com/omargallob/mono-repo-release/pkg/lib2",
-        "includeComponent": true,
-        "tagSeparator": ":",
-        "tagName": "lib2:v${version}"
-    },
-    "cmd/app": {
-        "releaseType": "go",
-        "version": "0.1.0",
-        "component": "cmd/app",
-        "changelogPath": "cmd/app/CHANGELOG.md",
-        "packageName": "github.com/omargallob/mono-repo-release/cmd/app",
-        "includeComponent": true,
-        "tagSeparator": ":",
-        "tagName": "app:v${version}"
-    },
-    ".": "2.2.1"
+    ".": "2.2.0"
 }
