@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.3](https://github.com/omargallob/mono-repo-release/compare/v2.2.2...v2.2.3) (2025-11-15)
+
+
+### Bug Fixes
+
+* broken pakacge name ([5f34212](https://github.com/omargallob/mono-repo-release/commit/5f34212f6acef7c544f339e0476226c1c764d2f7))
+* missing version file ([bd8146a](https://github.com/omargallob/mono-repo-release/commit/bd8146a918f501ba021370be6291c12a14c4c15e))
+
 ## [2.2.2](https://github.com/omargallob/mono-repo-release/compare/v2.2.1...v2.2.2) (2025-11-15)
 
 
