@@ -1,9 +1,10 @@
 # mono-repo-release
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/omargallob/mono-repo-release)
-![Build and Test](https://github.com/omargallob/mono-repo-release/actions/workflows/ci.yml/badge.svg)
-![Lint](https://github.com/omargallob/mono-repo-release/actions/workflows/golangci-lint.yml/badge.svg)
 ![GitHub Release](https://img.shields.io/github/v/release/omargallob/mono-repo-release)
 ![GitHub top language](https://img.shields.io/github/languages/top/omargallob/mono-repo-release)
+
+![Build and Test](https://github.com/omargallob/mono-repo-release/actions/workflows/ci.yml/badge.svg)
+![Lint](https://github.com/omargallob/mono-repo-release/actions/workflows/golangci-lint.yml/badge.svg)
 
 - [mono-repo-release](#mono-repo-release)
   - [Project Structure](#project-structure)
