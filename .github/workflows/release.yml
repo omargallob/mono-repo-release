@@ -26,13 +26,18 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           include-component-in-tag: true
 
-  goreleaser-lib1:
+  goreleaser:
     needs: release-please
     runs-on: ubuntu-latest
     if: ${{ needs.release-please.outputs.release_created }}
     permissions:
       contents: write
       packages: write
+    strategy:
+      matrix:
+        package:
+          - lib1
+          - lib2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,45 +55,12 @@ jobs:
       - name: Run tests
         run: bazel test //...
 
-      - name: Run GoReleaser for lib1
+      - name: Run GoReleaser for ${{ matrix.package }}
         uses: goreleaser/goreleaser-action@v6
         with:
           distribution: goreleaser
           version: "~> v2"
-          args: release --clean -f pkg/lib1/.goreleaser.yml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  goreleaser-lib2:
-    needs: release-please
-    runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.release_created }}
-    permissions:
-      contents: write
-      packages: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: "1.24"
-
-      - name: Set up Bazel
-        uses: bazelbuild/setup-bazelisk@v3
-
-      - name: Run tests
-        run: bazel test //...
-
-      - name: Run GoReleaser for lib2
-        uses: goreleaser/goreleaser-action@v6
-        with:
-          distribution: goreleaser
-          version: "~> v2"
-          args: release --clean -f pkg/lib2/.goreleaser.yml
+          args: release --clean -f pkg/${{ matrix.package }}/.goreleaser.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
