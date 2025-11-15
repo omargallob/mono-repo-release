@@ -9,7 +9,7 @@ before:
 
 builds:
   - id: lib2-cli
-    main: ./cmd/main.go
+    main: ./pkg/lib2/cmd/main.go
     binary: lib2-cli
     env:
       - CGO_ENABLED=0
