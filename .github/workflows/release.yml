@@ -35,9 +35,13 @@ jobs:
       packages: write
     strategy:
       matrix:
-        package:
-          - lib1
-          - lib2
+        include:
+          - package: lib1
+            path: pkg/lib1
+          - package: lib2
+            path: pkg/lib2
+          - package: app
+            path: cmd/app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -60,7 +64,7 @@ jobs:
         with:
           distribution: goreleaser
           version: "~> v2"
-          args: release --clean --rm-dist -f pkg/${{ matrix.package }}/.goreleaser.yml
+          args: release --clean --rm-dist -f ${{ matrix.path }}/.goreleaser.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
